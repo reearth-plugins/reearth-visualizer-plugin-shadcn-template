@@ -1,0 +1,16 @@
+<title></title>
+<div id="root"></div>
+<script>
+  // Since we are rendering the ui with react, binding event listener for init message could be missed.
+  // We put initial data to global variable to make sure it's available when the script is loaded.
+  window.addEventListener(
+    "message",
+    function (e) {
+      if (e.data?.action === "__init__") {
+        window._reearth_plugin_extension_init_data_ = e.data.payload;
+      }
+    },
+    { once: true },
+  );
+</script>
+<script type="module" src="./main.tsx"></script>

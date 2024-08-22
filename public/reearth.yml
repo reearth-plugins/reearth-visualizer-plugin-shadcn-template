@@ -1,0 +1,16 @@
+id: reearth-visualizer-plugin-shadcn-template
+name: Visualizer plugin shadcn template
+version: 1.0.0
+extensions:
+  - id: demo
+    type: widget
+    name: Demo
+    schema:
+      groups:
+        - id: appearance
+          title: Appearance
+          fields:
+            - id: primary_color
+              title: Primary color
+              type: string
+              ui: color
