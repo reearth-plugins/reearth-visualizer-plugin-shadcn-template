@@ -6,9 +6,10 @@ export declare type Modal = {
       height?: number | string;
       background?: string;
       clickBgToClose?: boolean;
-    },
+    }
   ) => void;
-  readonly postMessage: (message: unknown) => void;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  readonly postMessage: (message: any) => void;
   readonly update: (options: {
     width?: number | string;
     height?: number | string;
@@ -28,10 +29,10 @@ export declare type ModalEvents = {
   readonly on: <T extends keyof ModalEventType>(
     type: T,
     callback: (...args: ModalEventType[T]) => void,
-    options?: { once?: boolean },
+    options?: { once?: boolean }
   ) => void;
   readonly off: <T extends keyof ModalEventType>(
     type: T,
-    callback: (...args: ModalEventType[T]) => void,
+    callback: (...args: ModalEventType[T]) => void
   ) => void;
 };

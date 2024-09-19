@@ -1,12 +1,13 @@
 import html from "@distui/demo/main/index.html?raw";
 
-import { GlobalThis, MouseEvent } from "@/shared/reearthTypes";
+import { GlobalThis, MouseEventProps } from "@/shared/reearthTypes";
 
 const reearth = (globalThis as unknown as GlobalThis).reearth;
 reearth.ui.show(html);
 
-// Demo of get message from UI
-reearth.on("message", (msg: { action: string; payload?: unknown }) => {
+// Get message from UI
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+reearth.extension.on("message", (msg: { action: string; payload?: any }) => {
   if (msg.action === "flyToTokyo") {
     reearth.camera.flyTo(
       {
@@ -19,23 +20,25 @@ reearth.on("message", (msg: { action: string; payload?: unknown }) => {
   }
 });
 
-const handleMouseMove = (e: MouseEvent) => {
-  // Demo of post message to UI
+const handleMouseMove = (e: MouseEventProps) => {
+  // Post message to UI
   reearth.ui.postMessage({
     action: "mouseMove",
     payload: e,
   });
 };
-reearth.on("mousemove", handleMouseMove);
+
+reearth.viewer.on("mouseMove", handleMouseMove);
 
 // Post message to UI when initialize
-// This is a little bit special since binding event listener on UI
-// by react usually is not ready at this moment.
+// !! NOTE !! You don't need to use this unless you need some initialize on first render
+
+// Binding event listener on UI by react will not be ready at this moment.
 // We need to add a data transformer to hold the initial message
 // Please check ./main/index.html for more details
 reearth.ui.postMessage({
   action: "__init__",
   payload: {
-    primaryColor: reearth.widget?.property?.appearance?.primary_color,
+    primaryColor: reearth.extension.widget?.property?.appearance?.primary_color,
   },
 });

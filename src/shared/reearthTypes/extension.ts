@@ -1,10 +1,11 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { Layer } from "@reearth/core";
 
 export declare type Extension = {
   readonly block?: PluginStoryBlock | (PluginInfoboxBlock & { layer?: Layer });
   readonly widget?: Widget;
   readonly list: PluginExtensionInstance[];
-  readonly postMessage?: (id: string, message: unknown) => void;
+  readonly postMessage?: (id: string, message: any) => void;
   readonly on: ExtensionEvents["on"];
   readonly off: ExtensionEvents["off"];
 };
@@ -29,7 +30,7 @@ export declare type PluginInfoboxBlock = {
   extensionId?: string;
   extensionType?: "infoboxBlock";
   propertyId?: string;
-  property?: unknown;
+  property?: any;
 };
 
 export type PluginStoryBlock = {
@@ -39,14 +40,14 @@ export type PluginStoryBlock = {
   extensionId: string;
   extensionType?: "storyBlock";
   propertyId?: string;
-  property?: unknown;
+  property?: any;
 };
 
 export declare type Widget = {
   readonly id: string;
   readonly pluginId?: string;
   readonly extensionId?: string;
-  readonly property?: unknown;
+  readonly property?: any;
   readonly propertyId?: string;
   readonly extended?: {
     horizontally: boolean;
@@ -65,7 +66,7 @@ export declare type PluginExtensionInstance = {
 };
 
 export declare type ExtensionEventType = {
-  message: [message: unknown];
+  message: [message: any];
   extensionMessage: [props: ExtensionMessage];
 };
 
@@ -82,6 +83,6 @@ export declare type ExtensionEvents = {
 };
 
 export declare type ExtensionMessage = {
-  data: unknown;
+  data: any;
   sender: string;
 };

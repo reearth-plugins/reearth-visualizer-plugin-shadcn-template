@@ -1,8 +1,13 @@
-export function postMsg(action: string, payload?: unknown) {
-  globalThis.parent.postMessage({
-    action,
-    payload,
-  });
+// Note: you can clearfy the type of payload base on your needs
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export function postMsg(action: string, payload?: any) {
+  globalThis.parent.postMessage(
+    {
+      action,
+      payload,
+    },
+    "*"
+  );
 }
 
 export function hexToHSL(hex: string | undefined) {

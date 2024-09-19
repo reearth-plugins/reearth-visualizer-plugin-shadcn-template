@@ -55,8 +55,8 @@ my-project/
 │   └── shared/
 │       ├── components/         // Shared components of ShadCN
 │       ├── lib/                // Shared lib of ShanCN
-│       ├── global.css          
-│       ├── reearthTypes.ts     // Shared Re:Earth types
+│       ├── reearthTypes/       // Shared Re:Earth Visualizer Plugin API types
+│       ├── global.css          // Shared Global CSS of tailwind
 │       └── utils.ts
 ├── dist/                       // Output directory of the plugin build
 ├── dist-ui/                    // Output directory for the UI build
@@ -66,6 +66,14 @@ my-project/
 ├── package.json
 └── README.md
 ```
+
+## How to add a new extension
+
+1. Update the `reearth.yml` file in the `public` folder.
+2. Create a new folder in `src/extensions` with the extension ID as the folder name.
+3. Create a new extension script file in the new folder with the extension ID as the file name.
+4. (Optional) Create a new UI project in the new extension folder if needed. You can refer to the `demo/main` for the structure.
+5. Update the scripts in `package.json` to build the new extension.
 
 ## Scripts
 
@@ -105,7 +113,7 @@ Starts the preview server on port `5005`.
 
 ## Development Workflow with Re:Earth Visualizer
 
-### Traditional Method
+### Traditional Way
 
 - Start a dev server for the UI project of the extension you are developing.
 - Develop the UI, checking it with the dev server.
@@ -116,21 +124,20 @@ Starts the preview server on port `5005`.
 
 This process is lengthy and results in low development efficiency.
 
-### Improved Method
+### Improved Way
 
 We are working on adding a new feature to Re:Earth Visualizer to improve the development experience (DX) for plugins. Follow these steps:
 
 0. Preparation:
    - Run Re:Earth Visualizer locally. Only the front-end is required; you can use any backend, such as the OSS backend.
    - Update the plugin code. You can test with the demo.
-1. Run `dev-build`:
-   This will:
-     - Start a dev server for the UI project as usual (you might not use this often).
-     - Automatically build the UI upon edits.
-     - Automatically build the extension.
-     - Start a preview server at `http://localhost:5005`.
+1. Run `dev-build`, it will:
+   - Start a dev server for the UI project as usual (usually you don't need to use this).
+   - Automatically build the UI upon edits.
+   - Automatically build the extension.
+   - Start a preview server at `http://localhost:5005`.
 2. Set environment variables in the Re:Earth Visualizer front-end project: `REEARTH_WEB_DEV_PLUGIN_URLS='["http://localhost:5005"]'`. The server will automatically restart after .env changes.
-3. Done. Now Re:Earth Visualizer will offer two buttons in the editor header:
+3. Done. Now Re:Earth Visualizer will offer two icon buttons in the editor header:
    - `Install Dev Plugins`
      - This fetches plugin files from the plugin preview, automatically zips, and installs them.
      - Click this only when initially setting up and after modifying `reearth.yml`.

@@ -6,7 +6,7 @@ import {
   useState,
 } from "react";
 
-import { MouseEvent } from "@/shared/reearthTypes";
+import { MouseEventProps } from "@/shared/reearthTypes";
 import { hexToHSL, postMsg } from "@/shared/utils";
 
 export default () => {
@@ -47,7 +47,7 @@ export default () => {
     height: 0,
   });
 
-  const handleMouseMove = useCallback((e: MouseEvent) => {
+  const handleMouseMove = useCallback((e: MouseEventProps) => {
     setMouseLocation({
       lng: e.lng,
       lat: e.lat,
