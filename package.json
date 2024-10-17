@@ -9,7 +9,7 @@
     "dev:demo:main": "cross-env EXTENSION_NAME=demo UI_NAME=main vite -c configs/ui.ts",
     "build:demo:main": "cross-env EXTENSION_NAME=demo UI_NAME=main vite build -c configs/ui.ts",
     "build:demo:extension": "cross-env EXTENSION_NAME=demo vite build -c configs/extension.ts",
-    "build:demo": "run-s build:demo:main; build:demo:extension",
+    "build:demo": "run-s build:demo:main build:demo:extension",
     "build": "run-s build:demo zip",
     "preview": "vite preview --port 5005 --strict-port",
     "zip": "node ./scripts/zip.mjs",
