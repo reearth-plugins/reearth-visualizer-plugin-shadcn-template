@@ -1,0 +1,58 @@
+name: Build Plugin
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+
+  pull_request:
+    branches:
+      - main
+      - develop
+
+  workflow_dispatch: # Allows the workflow to be triggered manually
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checkout the code
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # Set up Node.js
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+
+      # Enable Corepack
+      - name: Enable Corepack
+        run: corepack enable
+
+      # Use the correct Yarn version
+      - name: Use the correct Yarn version
+        run: corepack prepare yarn@4.5.1 --activate
+
+      # Install dependencies using Yarn
+      - name: Install dependencies
+        run: yarn install
+
+      # Build the project using Yarn
+      - name: Build the project
+        run: yarn build
+
+      # Extract `id` and `version` from reearth.yml and create a custom artifact name
+      - name: Extract id and version
+        run: |
+          id=$(node -e "const yaml = require('js-yaml'); const fs = require('fs'); const doc = yaml.load(fs.readFileSync('public/reearth.yml', 'utf8')); console.log(doc.id);")
+          version=$(node -e "const yaml = require('js-yaml'); const fs = require('fs'); const doc = yaml.load(fs.readFileSync('public/reearth.yml', 'utf8')); console.log(doc.version);")
+          zip_file_name="${id}~${version}"
+          echo "ZIP_FILE_NAME=${zip_file_name}" >> $GITHUB_ENV
+
+      # Upload the dist directory as an artifact with the correct name
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ env.ZIP_FILE_NAME }} # No .zip extension here
+          path: ./dist
