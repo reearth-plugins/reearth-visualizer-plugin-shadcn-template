@@ -2347,6 +2347,19 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@tailwindcss/vite@npm:4.1.10":
+  version: 4.1.10
+  resolution: "@tailwindcss/vite@npm:4.1.10"
+  dependencies:
+    "@tailwindcss/node": "npm:4.1.10"
+    "@tailwindcss/oxide": "npm:4.1.10"
+    tailwindcss: "npm:4.1.10"
+  peerDependencies:
+    vite: ^5.2.0 || ^6
+  checksum: 10c0/aedb70f4291a7fc78e0ff393f6dcf372678a21577a80dd2fa5a75743a04313baa64526207cabb6d07e700669c2764884300527f30e8ef43539f5e789c3e32146
+  languageName: node
+  linkType: hard
+
 "@turf/along@npm:^6.5.0":
   version: 6.5.0
   resolution: "@turf/along@npm:6.5.0"
@@ -3787,6 +3800,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/debug@npm:^4.1.12":
+  version: 4.1.12
+  resolution: "@types/debug@npm:4.1.12"
+  dependencies:
+    "@types/ms": "npm:*"
+  checksum: 10c0/5dcd465edbb5a7f226e9a5efd1f399c6172407ef5840686b73e3608ce135eeca54ae8037dcd9f16bdb2768ac74925b820a8b9ecc588a58ca09eca6acabe33e2f
+  languageName: node
+  linkType: hard
+
 "@types/estree@npm:*, @types/estree@npm:^1.0.0":
   version: 1.0.5
   resolution: "@types/estree@npm:1.0.5"
@@ -3805,6 +3827,16 @@ __metadata:
   version: 1.0.8
   resolution: "@types/estree@npm:1.0.8"
   checksum: 10c0/39d34d1afaa338ab9763f37ad6066e3f349444f9052b9676a7cc0252ef9485a41c6d81c9c4e0d26e9077993354edf25efc853f3224dd4b447175ef62bdcc86a5
+  languageName: node
+  linkType: hard
+
+"@types/fs-extra@npm:^11.0.4":
+  version: 11.0.4
+  resolution: "@types/fs-extra@npm:11.0.4"
+  dependencies:
+    "@types/jsonfile": "npm:*"
+    "@types/node": "npm:*"
+  checksum: 10c0/9e34f9b24ea464f3c0b18c3f8a82aefc36dc524cc720fc2b886e5465abc66486ff4e439ea3fb2c0acebf91f6d3f74e514f9983b1f02d4243706bdbb7511796ad
   languageName: node
   linkType: hard
 
@@ -3843,6 +3875,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/jsonfile@npm:*":
+  version: 6.1.4
+  resolution: "@types/jsonfile@npm:6.1.4"
+  dependencies:
+    "@types/node": "npm:*"
+  checksum: 10c0/b12d068b021e4078f6ac4441353965769be87acf15326173e2aea9f3bf8ead41bd0ad29421df5bbeb0123ec3fc02eb0a734481d52903704a1454a1845896b9eb
+  languageName: node
+  linkType: hard
+
 "@types/jsonpath-plus@npm:5.0.5":
   version: 5.0.5
   resolution: "@types/jsonpath-plus@npm:5.0.5"
@@ -3863,6 +3904,22 @@ __metadata:
   version: 4.17.7
   resolution: "@types/lodash@npm:4.17.7"
   checksum: 10c0/40c965b5ffdcf7ff5c9105307ee08b782da228c01b5c0529122c554c64f6b7168fc8f11dc79aa7bae4e67e17efafaba685dc3a47e294dbf52a65ed2b67100561
+  languageName: node
+  linkType: hard
+
+"@types/ms@npm:*":
+  version: 2.1.0
+  resolution: "@types/ms@npm:2.1.0"
+  checksum: 10c0/5ce692ffe1549e1b827d99ef8ff71187457e0eb44adbae38fdf7b9a74bae8d20642ee963c14516db1d35fa2652e65f47680fdf679dcbde52bbfadd021f497225
+  languageName: node
+  linkType: hard
+
+"@types/node@npm:*":
+  version: 24.0.3
+  resolution: "@types/node@npm:24.0.3"
+  dependencies:
+    undici-types: "npm:~7.8.0"
+  checksum: 10c0/9c3c4e87600d1cf11e291c2fd4bfd806a615455463c30a0ef6dc9c801b3423344d9b82b8084e3ccabce485a7421ebb61a66e9676181bd7d9aea4759998a120d5
   languageName: node
   linkType: hard
 
@@ -4596,6 +4653,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"base-log-factory@npm:^2.1.4":
+  version: 2.1.4
+  resolution: "base-log-factory@npm:2.1.4"
+  dependencies:
+    date-manip: "npm:^2.0.6"
+    is-what-type: "npm:^1.0.1"
+  checksum: 10c0/9b120df200441aa2e702b77ef307afa30a33b618c5847e5dadd4ae838ad11c9e5d2535ae2c61e90a2a551842890c9374ba81abf179d1cdb1d82465916f7c9d53
+  languageName: node
+  linkType: hard
+
 "base64-js@npm:^1.3.1":
   version: 1.5.1
   resolution: "base64-js@npm:1.5.1"
@@ -4607,6 +4674,29 @@ __metadata:
   version: 2.3.0
   resolution: "binary-extensions@npm:2.3.0"
   checksum: 10c0/75a59cafc10fb12a11d510e77110c6c7ae3f4ca22463d52487709ca7f18f69d886aa387557cc9864fbdb10153d0bdb4caacabf11541f55e89ed6e18d12ece2b5
+  languageName: node
+  linkType: hard
+
+"blf-colorful-appender@npm:^1.0.6":
+  version: 1.0.6
+  resolution: "blf-colorful-appender@npm:1.0.6"
+  dependencies:
+    base-log-factory: "npm:^2.1.4"
+    picocolors: "npm:^1.1.1"
+  checksum: 10c0/1267315ad4a101c0d97a919d03a6bc1f95175cc7373c94442b0d991a91b118d7dc23b356cdabf3241223b6979536c6615f19315f714de9d63fd592d430208935
+  languageName: node
+  linkType: hard
+
+"blf-debug-appender@npm:^1.0.2":
+  version: 1.0.5
+  resolution: "blf-debug-appender@npm:1.0.5"
+  dependencies:
+    "@types/debug": "npm:^4.1.12"
+    base-log-factory: "npm:^2.1.4"
+    blf-colorful-appender: "npm:^1.0.6"
+    date-manip: "npm:^2.0.6"
+    debug: "npm:^4.4.0"
+  checksum: 10c0/df333e9aa9864f1f08ea4660e19043ff6baf17f9f61c359aeefb60cf6d6646caa0be523cb2cc958a561be6949d510532f398ede2d5b8b4df5067ded9998f0151
   languageName: node
   linkType: hard
 
@@ -5511,6 +5601,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"date-manip@npm:^2.0.6":
+  version: 2.0.6
+  resolution: "date-manip@npm:2.0.6"
+  checksum: 10c0/caff476af141daae12abac3850c1ffa14c30929cbccb9ecdcbc9beb74d70e0a27fb7f0d46f7072735e77923a0894a5c21396dc5a775d116abc90342bc9b530ef
+  languageName: node
+  linkType: hard
+
 "debug@npm:4, debug@npm:^4.1.0, debug@npm:^4.2.0, debug@npm:^4.3.1, debug@npm:^4.3.2, debug@npm:^4.3.4":
   version: 4.3.6
   resolution: "debug@npm:4.3.6"
@@ -5529,6 +5626,18 @@ __metadata:
   dependencies:
     ms: "npm:^2.1.1"
   checksum: 10c0/37d96ae42cbc71c14844d2ae3ba55adf462ec89fd3a999459dec3833944cd999af6007ff29c780f1c61153bcaaf2c842d1e4ce1ec621e4fc4923244942e4a02a
+  languageName: node
+  linkType: hard
+
+"debug@npm:^4.4.0":
+  version: 4.4.1
+  resolution: "debug@npm:4.4.1"
+  dependencies:
+    ms: "npm:^2.1.3"
+  peerDependenciesMeta:
+    supports-color:
+      optional: true
+  checksum: 10c0/d2b44bc1afd912b49bb7ebb0d50a860dc93a4dd7d946e8de94abc957bb63726b7dd5aa48c18c2386c379ec024c46692e15ed3ed97d481729f929201e671fcd55
   languageName: node
   linkType: hard
 
@@ -6518,6 +6627,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"figlet@npm:^1.8.0":
+  version: 1.8.1
+  resolution: "figlet@npm:1.8.1"
+  bin:
+    figlet: bin/index.js
+  checksum: 10c0/20a9023ee316b2cbbeb9ba94c9adfdb9fc1bd150efec0ddd3492c23a03e3311ac77fb1a65cfa14e3bf4eca250ddcf98ca380871222cb9909bd50071b3602e8da
+  languageName: node
+  linkType: hard
+
 "file-entry-cache@npm:^8.0.0":
   version: 8.0.0
   resolution: "file-entry-cache@npm:8.0.0"
@@ -6633,6 +6751,17 @@ __metadata:
     jsonfile: "npm:^6.0.1"
     universalify: "npm:^2.0.0"
   checksum: 10c0/5f579466e7109719d162a9249abbeffe7f426eb133ea486e020b89bc6d67a741134076bf439983f2eb79276ceaf6bd7b7c1e43c3fd67fe889863e69072fb0a5e
+  languageName: node
+  linkType: hard
+
+"fs-extra@npm:^11.1.1, fs-extra@npm:^11.3.0":
+  version: 11.3.0
+  resolution: "fs-extra@npm:11.3.0"
+  dependencies:
+    graceful-fs: "npm:^4.2.0"
+    jsonfile: "npm:^6.0.1"
+    universalify: "npm:^2.0.0"
+  checksum: 10c0/5f95e996186ff45463059feb115a22fb048bdaf7e487ecee8a8646c78ed8fdca63630e3077d4c16ce677051f5e60d3355a06f3cd61f3ca43f48cc58822a44d0a
   languageName: node
   linkType: hard
 
@@ -7573,6 +7702,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"is-what-type@npm:^1.0.1, is-what-type@npm:^1.1.4":
+  version: 1.1.4
+  resolution: "is-what-type@npm:1.1.4"
+  checksum: 10c0/2213ef99a7193d6edb3c1b2b1abfa01f5afece8d17bf0a18fe2b293d4ad3e335ea74880fb2e3b20cea12204dce3f563cc084bdeedcea045ae26922651a48bfaa
+  languageName: node
+  linkType: hard
+
 "is@npm:^3.3.0":
   version: 3.3.0
   resolution: "is@npm:3.3.0"
@@ -8376,7 +8512,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ms@npm:^2.1.1":
+"ms@npm:^2.1.1, ms@npm:^2.1.3":
   version: 2.1.3
   resolution: "ms@npm:2.1.3"
   checksum: 10c0/d924b57e7312b3b63ad21fc5b3dc0af5e78d61a1fc7cfb5457edaf26326bf62be5307cc87ffb6862ef1c2b33b0233cdb5d4f01c4c958cc0d660948b65a287a48
@@ -9426,6 +9562,7 @@ __metadata:
     "@radix-ui/react-slot": "npm:1.2.3"
     "@reearth/core": "npm:0.0.7-alpha.38"
     "@tailwindcss/postcss": "npm:4.1.10"
+    "@tailwindcss/vite": "npm:4.1.10"
     "@types/node": "npm:20.14.10"
     "@types/react": "npm:19.1.8"
     "@types/react-dom": "npm:19.1.2"
@@ -9452,9 +9589,11 @@ __metadata:
     tailwind-merge: "npm:2.5.5"
     tailwindcss: "npm:4.1.10"
     tailwindcss-animate: "npm:1.0.7"
+    tw-animate-css: "npm:1.3.4"
     typescript: "npm:5.7.2"
     vite: "npm:6.0.3"
     vite-plugin-cdn-import: "npm:1.0.1"
+    vite-plugin-external: "npm:6.2.2"
     vite-plugin-singlefile: "npm:2.2.0"
     yml: "npm:1.0.0"
   languageName: unknown
@@ -10776,6 +10915,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"tw-animate-css@npm:1.3.4":
+  version: 1.3.4
+  resolution: "tw-animate-css@npm:1.3.4"
+  checksum: 10c0/fc17e27684351ee151dd0bcef848ef72d1ec4bce6769ece079f30ac8a481c52a6c9d523f7ecd55ef73adc4b7375fdc7a46bb2598335fb06d86d0bc65a6c3e37b
+  languageName: node
+  linkType: hard
+
 "type-check@npm:^0.4.0, type-check@npm:~0.4.0":
   version: 0.4.0
   resolution: "type-check@npm:0.4.0"
@@ -10955,6 +11101,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"undici-types@npm:~7.8.0":
+  version: 7.8.0
+  resolution: "undici-types@npm:7.8.0"
+  checksum: 10c0/9d9d246d1dc32f318d46116efe3cfca5a72d4f16828febc1918d94e58f6ffcf39c158aa28bf5b4fc52f410446bc7858f35151367bd7a49f21746cab6497b709b
+  languageName: node
+  linkType: hard
+
 "unique-filename@npm:^3.0.0":
   version: 3.0.0
   resolution: "unique-filename@npm:3.0.0"
@@ -11116,6 +11269,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"vite-plugin-external@npm:6.2.2":
+  version: 6.2.2
+  resolution: "vite-plugin-external@npm:6.2.2"
+  dependencies:
+    "@types/fs-extra": "npm:^11.0.4"
+    fs-extra: "npm:^11.1.1"
+    is-what-type: "npm:^1.1.4"
+    vp-runtime-helper: "npm:^1.0.10"
+  checksum: 10c0/76deecb5295b80367755ba319d0d9dfe1e1c4d6545ab86588656d312e23c77b5def5b74d81ca10617abfa0f3b5eee6a78f387db77cbb7a119cc2e688cdf5083c
+  languageName: node
+  linkType: hard
+
 "vite-plugin-externals@npm:^0.6.2":
   version: 0.6.2
   resolution: "vite-plugin-externals@npm:0.6.2"
@@ -11191,6 +11356,20 @@ __metadata:
   bin:
     vite: bin/vite.js
   checksum: 10c0/764ebed14770426a638575b23a51127c630ace873999ab896b0184484d8107e7255cdf64cfb36c65c1ef1d583e44b70a1d14c0f05b89612e834a5806e3964475
+  languageName: node
+  linkType: hard
+
+"vp-runtime-helper@npm:^1.0.10":
+  version: 1.0.10
+  resolution: "vp-runtime-helper@npm:1.0.10"
+  dependencies:
+    "@types/fs-extra": "npm:^11.0.4"
+    base-log-factory: "npm:^2.1.4"
+    blf-debug-appender: "npm:^1.0.2"
+    figlet: "npm:^1.8.0"
+    fs-extra: "npm:^11.3.0"
+    picocolors: "npm:^1.0.0"
+  checksum: 10c0/a6978c7327d9fca0ef6c9011849070612eb36b5ed554ae46cea835708c0f535aaad505d884f233c6ba1181afa9ff9ffd66c0e92f6aa9d130465ecc3c6e5733c5
   languageName: node
   linkType: hard
 

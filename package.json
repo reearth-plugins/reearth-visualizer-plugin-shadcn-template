@@ -13,6 +13,7 @@
     "build": "run-s build:demo zip",
     "preview": "vite preview --port 5005 --strict-port",
     "zip": "node ./scripts/zip.mjs",
+    "type": "tsc -b",
     "lint": "eslint .",
     "fix": "eslint --fix .",
     "format": "prettier --write .",
@@ -23,11 +24,13 @@
     "@radix-ui/react-label": "2.1.7",
     "@radix-ui/react-popover": "1.1.14",
     "@radix-ui/react-slot": "1.2.3",
+    "@tailwindcss/vite": "4.1.10",
     "class-variance-authority": "0.7.1",
     "clsx": "2.1.1",
     "lucide-react": "0.516.0",
     "tailwind-merge": "2.5.5",
-    "tailwindcss-animate": "1.0.7"
+    "tailwindcss-animate": "1.0.7",
+    "tw-animate-css": "1.3.4"
   },
   "devDependencies": {
     "@reearth/core": "0.0.7-alpha.38",
@@ -56,6 +59,7 @@
     "typescript": "5.7.2",
     "vite": "6.0.3",
     "vite-plugin-cdn-import": "1.0.1",
+    "vite-plugin-external": "6.2.2",
     "vite-plugin-singlefile": "2.2.0",
     "yml": "1.0.0"
   },
