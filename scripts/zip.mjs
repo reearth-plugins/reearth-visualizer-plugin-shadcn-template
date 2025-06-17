@@ -34,7 +34,7 @@ async function main() {
 
   try {
     // Ensure the package directory exists
-    // eslint-disable-next-line @typescript-eslint/no-empty-function
+     
     await fs.mkdir(outputDir, { recursive: true }, () => {});
 
     await zipDirectory(sourceDir, outputPath);

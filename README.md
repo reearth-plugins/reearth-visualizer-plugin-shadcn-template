@@ -2,6 +2,13 @@
 
 This template provides a minimal setup to develop a Re:Earth Visualizer Plugin with Vite, React, ShadCN, and Tailwind CSS.
 
+## Tech Stack
+
+- **React 19.1.0** with **TypeScript 5.7.2**
+- **Vite 6.0.3** for build tooling
+- **TailwindCSS 4.1.10** for styling
+- **Radix UI** components with **ShadCN/UI**
+
 ## Re:Earth Visualizer Plugin Structure
 
 The structure of a Re:Earth Visualizer Plugin aligns with the definitions in `reearth.yml`. Specifically:
@@ -129,6 +136,7 @@ This process is lengthy and results in low development efficiency.
 We are working on adding a new feature to Re:Earth Visualizer to improve the development experience (DX) for plugins. Follow these steps:
 
 0. Preparation:
+
    - Run Re:Earth Visualizer locally. Only the front-end is required; you can use any backend, such as the OSS backend.
    - Update the plugin code. You can test with the demo.
 
@@ -137,23 +145,27 @@ We are working on adding a new feature to Re:Earth Visualizer to improve the dev
 ```zsh
 yarn dev-build
 ```
-   it will:
-   - Start a dev server for the UI project as usual (usually you don't need to use this).
-   - Automatically build the UI upon edits.
-   - Automatically build the extension.
-   - Start a preview server at `http://localhost:5005`.
+
+it will:
+
+- Start a dev server for the UI project as usual (usually you don't need to use this).
+- Automatically build the UI upon edits.
+- Automatically build the extension.
+- Start a preview server at `http://localhost:5005`.
 
 2. Set environment variables in the Re:Earth Visualizer front-end project: `REEARTH_WEB_DEV_PLUGIN_URLS='["http://localhost:5005"]'`. The server will automatically restart after .env changes.
 
 Done. Now Re:Earth Visualizer will offer two icon buttons in the editor header:
-   - `Install Dev Plugins` ![image](https://github.com/user-attachments/assets/aa5cf46c-019e-4df6-82f7-c18aa18fe108)
 
-     - This fetches plugin files from the plugin preview, automatically zips, and installs them.
-     - Click this only when initially setting up and after modifying `reearth.yml`.
-   - `Reload Dev Plugin Extensions` ![image](https://github.com/user-attachments/assets/493b1bf2-0ffa-43d7-9166-849b1e7a5e30)
+- `Install Dev Plugins` ![image](https://github.com/user-attachments/assets/aa5cf46c-019e-4df6-82f7-c18aa18fe108)
 
-     - This reloads all extensions from the plugin preview.
-     - Only the plugin reloads, which is much faster than reloading the entire page.
+  - This fetches plugin files from the plugin preview, automatically zips, and installs them.
+  - Click this only when initially setting up and after modifying `reearth.yml`.
+
+- `Reload Dev Plugin Extensions` ![image](https://github.com/user-attachments/assets/493b1bf2-0ffa-43d7-9166-849b1e7a5e30)
+
+  - This reloads all extensions from the plugin preview.
+  - Only the plugin reloads, which is much faster than reloading the entire page.
 
 ### Summary
 
