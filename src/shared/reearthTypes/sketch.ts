@@ -38,6 +38,7 @@ export declare type SketchOptions = {
 
 export declare type SketchEventType = {
   create: [props: SketchEventProps];
+  update: [props: SketchEventProps];
   toolChange: [props: SketchType | undefined];
 };
 
@@ -45,10 +46,10 @@ export declare type SketchEvents = {
   readonly on: <T extends keyof SketchEventType>(
     type: T,
     callback: (...args: SketchEventType[T]) => void,
-    options?: { once?: boolean },
+    options?: { once?: boolean }
   ) => void;
   readonly off: <T extends keyof SketchEventType>(
     type: T,
-    callback: (...args: SketchEventType[T]) => void,
+    callback: (...args: SketchEventType[T]) => void
   ) => void;
 };

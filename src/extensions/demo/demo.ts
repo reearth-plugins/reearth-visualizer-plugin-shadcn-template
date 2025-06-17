@@ -2,19 +2,22 @@ import html from "@distui/demo/main/index.html?raw";
 
 import { GlobalThis, MouseEventProps } from "@/shared/reearthTypes";
 
+type WidgetProperty = { appearance?: { primary_color?: string } };
+
 const reearth = (globalThis as unknown as GlobalThis).reearth;
 reearth.ui.show(html);
 
 // Get message from UI
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-reearth.extension.on("message", (msg: { action: string; payload?: any }) => {
-  if (msg.action === "flyToTokyo") {
+reearth.extension.on("message", (message: unknown) => {
+  const msg = message as { action: string; payload?: any };
+  if (
+    msg &&
+    typeof msg === "object" &&
+    "action" in msg &&
+    msg.action === "flyToTokyo"
+  ) {
     reearth.camera.flyTo(
-      {
-        lat: 35.68505398711427,
-        lng: 139.75584459383325,
-        height: 5000,
-      },
+      { lat: 35.68505398711427, lng: 139.75584459383325, height: 5000 },
       { duration: 1 }
     );
   }
@@ -22,10 +25,7 @@ reearth.extension.on("message", (msg: { action: string; payload?: any }) => {
 
 const handleMouseMove = (e: MouseEventProps) => {
   // Post message to UI
-  reearth.ui.postMessage({
-    action: "mouseMove",
-    payload: e,
-  });
+  reearth.ui.postMessage({ action: "mouseMove", payload: e });
 };
 
 reearth.viewer.on("mouseMove", handleMouseMove);
@@ -39,6 +39,7 @@ reearth.viewer.on("mouseMove", handleMouseMove);
 reearth.ui.postMessage({
   action: "__init__",
   payload: {
-    primaryColor: reearth.extension.widget?.property?.appearance?.primary_color,
+    primaryColor: (reearth.extension.widget?.property as WidgetProperty)
+      ?.appearance?.primary_color,
   },
 });

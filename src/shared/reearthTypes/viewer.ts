@@ -16,9 +16,7 @@ export declare type LayerSelectWithRect = MouseEventProps & {
   pressedKey?: "shift";
 };
 
-export declare type PickedFeature = ComputedFeature & {
-  layerId?: string;
-};
+export declare type PickedFeature = ComputedFeature & { layerId?: string };
 
 export declare type LayerSelectWithRectEnd = LayerSelectWithRect & {
   features: PickedFeature[] | undefined;
@@ -34,7 +32,12 @@ export declare type LayerSelectWithRectMove = LayerSelectWithRect & {
 
 export declare type LayerSelectWithRectStart = LayerSelectWithRect;
 
-export declare type InteractionModeType = "default" | "move" | "selection" | "sketch";
+export declare type InteractionModeType =
+  | "default"
+  | "move"
+  | "selection"
+  | "sketch"
+  | "spatialId";
 
 export declare type Viewer = {
   readonly property: ViewerProperty | undefined;
@@ -43,7 +46,10 @@ export declare type Viewer = {
   readonly interactionMode: InteractionMode;
   readonly env: Env;
   readonly tools: Tools;
-  readonly capture: (type?: string, encoderOptions?: number) => string | undefined;
+  readonly capture: (
+    type?: string,
+    encoderOptions?: number
+  ) => string | undefined;
   readonly on: ViewerEvents["on"];
   readonly off: ViewerEvents["off"];
 };
@@ -74,35 +80,57 @@ export declare type Env = {
   readonly isBuilt: boolean;
 };
 
+export declare type GeolocationOptions = {
+  enableHighAccuracy?: boolean;
+  timeout?: number;
+  maximumAge?: number;
+};
+
 export declare type Tools = {
   readonly getLocationFromScreenCoordinate: (
     x: number,
     y: number,
-    withTerrain?: boolean,
+    withTerrain?: boolean
   ) => LatLngHeight | undefined;
   readonly getScreenCoordinateFromPosition: (
-    position: [x: number, y: number, z: number],
+    position: [x: number, y: number, z: number]
   ) => [x: number, y: number] | undefined;
-  readonly getTerrainHeightAsync: (lng: number, lat: number) => Promise<number | undefined>;
-  readonly getGlobeHeight: (lng: number, lat: number, height?: number) => number | undefined;
+  readonly getTerrainHeightAsync: (
+    lng: number,
+    lat: number
+  ) => Promise<number | undefined>;
+  readonly getGlobeHeight: (
+    lng: number,
+    lat: number,
+    height?: number
+  ) => number | undefined;
   readonly getGlobeHeightByCamera: () => number | undefined;
   readonly cartographicToCartesian: (
     lng: number,
     lat: number,
     height: number,
-    options?: { useGlobeEllipsoid?: boolean },
+    options?: { useGlobeEllipsoid?: boolean }
   ) => [x: number, y: number, z: number] | undefined;
   readonly cartesianToCartographic: (
     x: number,
     y: number,
     z: number,
-    options?: { useGlobeEllipsoid?: boolean },
+    options?: { useGlobeEllipsoid?: boolean }
   ) => [lng: number, lat: number, height: number] | undefined;
   readonly transformByOffsetOnScreen: (
     rawPosition: [x: number, y: number, z: number],
-    screenOffset: [x: number, y: number],
+    screenOffset: [x: number, y: number]
   ) => [x: number, y: number, z: number] | undefined;
-  readonly isPositionVisibleOnGlobe: (position: [x: number, y: number, z: number]) => boolean;
+  readonly isPositionVisibleOnGlobe: (
+    position: [x: number, y: number, z: number]
+  ) => boolean;
+  readonly getGeoidHeight: (
+    lng?: number,
+    lat?: number
+  ) => Promise<number | undefined>;
+  readonly getCurrentLocationAsync: (
+    options?: GeolocationOptions
+  ) => Promise<LatLngHeight | undefined>;
 };
 
 export declare type ViewerEventType = {
@@ -127,11 +155,11 @@ export declare type ViewerEvents = {
   readonly on: <T extends keyof ViewerEventType>(
     type: T,
     callback: (...args: ViewerEventType[T]) => void,
-    options?: { once?: boolean },
+    options?: { once?: boolean }
   ) => void;
   readonly off: <T extends keyof ViewerEventType>(
     type: T,
-    callback: (...args: ViewerEventType[T]) => void,
+    callback: (...args: ViewerEventType[T]) => void
   ) => void;
 };
 
@@ -145,10 +173,10 @@ export declare type SelectionModeEvents = {
   readonly on: <T extends keyof SelectionModeEventType>(
     type: T,
     callback: (...args: SelectionModeEventType[T]) => void,
-    options?: { once?: boolean },
+    options?: { once?: boolean }
   ) => void;
   readonly off: <T extends keyof SelectionModeEventType>(
     type: T,
-    callback: (...args: SelectionModeEventType[T]) => void,
+    callback: (...args: SelectionModeEventType[T]) => void
   ) => void;
 };

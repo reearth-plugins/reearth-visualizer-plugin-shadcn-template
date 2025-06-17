@@ -8,7 +8,7 @@ import {
   LayerVisibilityEvent,
   LazyLayer,
   NaiveLayer,
-  OverriddenLayer,
+  OverriddenLayer
 } from "@reearth/core";
 
 export declare type LayerId = string;
@@ -23,8 +23,7 @@ export declare type Layers = {
     id: string,
     layer?:
       | (Partial<Layer> & {
-          // eslint-disable-next-line @typescript-eslint/no-explicit-any
-          property?: any;
+          property?: unknown;
         })
       | null
   ) => void;
@@ -47,7 +46,6 @@ export declare type Layers = {
     layerId: string,
     featureId: string[]
   ) => Feature[] | undefined;
-  readonly layersInViewport?: () => LazyLayer[] | undefined;
   readonly select?: (layerId: string | undefined) => void;
   readonly selectFeature?: (layerId?: string, featureId?: string) => void;
   readonly selectFeatures?: (
@@ -57,7 +55,6 @@ export declare type Layers = {
   readonly selectedFeature?: ComputedFeature;
   readonly bringToFront?: (layerId: string) => void;
   readonly sendToBack?: (layerId: string) => void;
-  readonly getLayersInViewport?: () => LazyLayer[] | undefined;
   readonly getFeaturesInScreenRect: (
     rect: [x: number, y: number, width: number, height: number],
     // TODO: Get condition as expression for plugin
