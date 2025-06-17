@@ -30,8 +30,7 @@ export declare type Popup = {
       offset?: PopupOffset;
     }
   ) => void;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  readonly postMessage: (message: any) => void;
+  readonly postMessage: (message: unknown) => void;
   readonly update: (options: {
     width?: number | string;
     height?: number | string;

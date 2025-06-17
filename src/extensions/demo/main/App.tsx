@@ -1,5 +1,7 @@
 import { ArrowRightCircle } from "lucide-react";
 
+import useHooks from "./hooks";
+
 import { Button } from "@/shared/components/ui/button";
 import {
   Card,
@@ -20,7 +22,6 @@ import {
   TableRow,
 } from "@/shared/components/ui/table";
 
-import useHooks from "./hooks";
 
 function App() {
   const { mouseLocation, handleFlyToTokyo } = useHooks();

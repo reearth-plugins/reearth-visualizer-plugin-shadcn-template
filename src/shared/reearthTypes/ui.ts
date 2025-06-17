@@ -8,8 +8,7 @@ export declare type UI = {
       extended?: boolean;
     }
   ) => void;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  readonly postMessage: (message: any) => void;
+  readonly postMessage: (message: unknown) => void;
   readonly resize: (
     width: string | number | undefined,
     height: string | number | undefined,

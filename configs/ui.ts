@@ -2,7 +2,6 @@ import path from "path";
 
 import react from "@vitejs/plugin-react";
 import { Plugin, defineConfig } from "vite";
-import cdn from "vite-plugin-cdn-import";
 import { viteSingleFile } from "vite-plugin-singlefile";
 
 import pkg from "../package.json";
@@ -25,13 +24,8 @@ export default defineConfig({
     react(),
     serverHeaders(),
     viteSingleFile(),
-    cdn({
-      modules: ["react", "react-dom"],
-    }),
   ],
-  define: {
-    "process.env.VERSION": JSON.stringify(pkg.version),
-  },
+  define: { "process.env.VERSION": JSON.stringify(pkg.version) },
   root: path.resolve(__dirname, "../src/extensions", extensionName, uiName),
   appType: "spa",
   publicDir: false,
@@ -39,9 +33,5 @@ export default defineConfig({
     outDir: path.resolve(__dirname, "../dist-ui", extensionName, uiName),
     emptyOutDir: false,
   },
-  resolve: {
-    alias: {
-      "@": path.resolve(__dirname, "../src"),
-    },
-  },
+  resolve: { alias: { "@": path.resolve(__dirname, "../src") } },
 });

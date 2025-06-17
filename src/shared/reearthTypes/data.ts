@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 export declare type Data = {
   readonly clientStorage: ClientStorage;
 };

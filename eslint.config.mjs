@@ -1,9 +1,7 @@
 import config from "eslint-config-reearth";
 
-/** @type { import("eslint").Linter.FlatConfig[] } */
+/** @type { import("eslint").Linter.Config[] } */
 export default [
-  ...config,
-  {
-    ignores: ["node_modules/", "dist/", "dist-ui/", "package/", "public/"],
-  },
+  ...config("@visualizer-plugin", { reactRecommended: true }),
+  { ignores: ["node_modules/", "dist/", "dist-ui/", "package/", "public/"] },
 ];
