@@ -1,6 +1,6 @@
 {
   "name": "reearth-visualizer-plugin-shadcn-template",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "type": "module",
   "engines": {
     "node": ">=20.11.0"
@@ -13,6 +13,7 @@
     "build": "run-s build:demo zip",
     "preview": "vite preview --port 5005 --strict-port",
     "zip": "node ./scripts/zip.mjs",
+    "manage": "node ./scripts/manage.mjs",
     "type": "tsc -b",
     "lint": "eslint .",
     "fix": "eslint --fix .",
