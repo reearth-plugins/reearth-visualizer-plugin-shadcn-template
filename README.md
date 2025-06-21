@@ -74,7 +74,40 @@ my-project/
 └── README.md
 ```
 
-## How to add a new extension
+## Extension Management
+
+### Interactive Management Tool
+
+Use the built-in interactive script to easily manage extensions and UI components:
+
+```zsh
+yarn manage
+```
+
+This interactive tool provides a menu-driven interface to:
+
+1. **Create Extension** - Generate new extensions with multiple UI components
+2. **Create UI** - Add new UI components to existing extensions  
+3. **Remove Extension** - Delete extensions and all associated UIs
+4. **Remove UI** - Remove individual UI components
+
+**Features:**
+- **Automated Setup**: Creates all necessary files, folder structure, and templates
+- **Package.json Integration**: Automatically adds/removes dev and build scripts
+- **YAML Management**: Updates `public/reearth.yml` with extension definitions
+- **Validation**: Ensures extension and UI names are valid JavaScript identifiers
+- **Safety Features**: Confirmation prompts and override warnings for existing files
+- **Auto-build**: Triggers initial builds for new extensions/UIs
+
+**Naming Rules:**
+- Extension IDs and UI names must start with a letter (a-z, A-Z)
+- Can contain letters, digits, and underscores only
+- No special characters, spaces, or reserved words
+- Examples: `myExtension`, `my_extension`, `dashboard`, `settings`
+
+### Manual Extension Setup
+
+If you prefer manual setup:
 
 1. Update the `reearth.yml` file in the `public` folder.
 2. Create a new folder in `src/extensions` with the extension ID as the folder name.
@@ -83,6 +116,16 @@ my-project/
 5. Update the scripts in `package.json` to build the new extension.
 
 ## Scripts
+
+### Extension Management
+
+```zsh
+yarn manage
+```
+
+Opens the interactive extension management tool for creating and managing extensions and UIs.
+
+### Development Scripts
 
 Refer to the scripts in `package.json`. Here are explanations for some of them:
 
